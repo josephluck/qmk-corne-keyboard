@@ -4,11 +4,25 @@ The keymap and configuration is available in the `/keyboards/crkbd/keymaps/josep
 
 This build has OLED support. It can be turned off in `rules.mk`
 
+### Principles
+
+-   QWERTY
+-   Two layers
+-   Mod tap based on thumb keys
+-   Arrow keys on thumbs
+
+### Modifying the firmware
+
 ### Building firmware
 
 > Assumes you have Docker installed
 
-To build the firmware, run: `util/docker_build.sh crkbd:joseph_luck`
+To build the firmware, run:
+
+```
+cp -r keyboards/crkbd/keymaps/joseph_luck/. ../qmk-corne-keymap
+util/docker_build.sh crkbd:joseph_luck
+```
 
 ### Flashing the keyboard
 
