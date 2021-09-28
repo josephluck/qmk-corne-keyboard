@@ -2,7 +2,7 @@
 
 The keymap and configuration is available in the `/keyboards/crkbd/keymaps/joseph_luck` directory.
 
-This build has OLED support. It can be turned off in `rules.mk`
+This build has OLED support. It can be turned on or off in `rules.mk`
 
 ### Principles
 
