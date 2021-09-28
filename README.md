@@ -20,8 +20,14 @@ This build has OLED support. It can be turned on or off in `rules.mk`
 To build the firmware, run:
 
 ```
-cp -r keyboards/crkbd/keymaps/joseph_luck/. ../qmk-corne-keymap
 util/docker_build.sh crkbd:joseph_luck
+```
+
+To save the latest keymap, run:
+
+```
+cp -r keyboards/crkbd/keymaps/joseph_luck/. ../qmk-corne-keymap
+pushd ../qmk-corne-keymap && git add . && git commit -m'Update keymap' && git push && popd
 ```
 
 ### Flashing the keyboard
