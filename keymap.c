@@ -23,16 +23,54 @@ enum custom_keycodes {
     SENDHASH = SAFE_RANGE
 };
 
+// Home row mods. Note, these aren't configured for colemak yet
+// If you want home mods, uncomment these:
+// Left half
+#define HM_A LGUI_T(KC_A)
+#define HM_S LALT_T(KC_S)
+#define HM_D LCTL_T(KC_D)
+#define HM_F LSFT_T(KC_F)
+// Right half
+#define HM_J RSFT_T(KC_J)
+#define HM_K RCTL_T(KC_K)
+#define HM_L LALT_T(KC_L)
+#define HM_SCLN RGUI_T(KC_SCLN)
+
+// If you don't want home mods, uncomment these:
+// Left half
+// #define HM_A LGUI_T(KC_A)
+// #define HM_S LALT_T(KC_S)
+// #define HM_D LCTL_T(KC_D)
+// #define HM_F LSFT_T(KC_F)
+// Right half
+// #define HM_J RSFT_T(KC_J)
+// #define HM_K RCTL_T(KC_K)
+// #define HM_L LALT_T(KC_L)
+// #define HM_SCLN RGUI_T(KC_SCLN)
+
+// Ctrl keys are on the z and / keys
+#define HM_Z LCTL_T(KC_Z)
+#define HM_SLSH RCTL_T(KC_SLSH)
+
+// Left thumb cluster
+#define HM_UP LALT_T(KC_UP)
+#define HM_SPC LT(2, KC_SPC)
+#define HM_DOWN LGUI_T(KC_DOWN)
+// Right thumb cluster
+#define HM_LEFT RGUI_T(KC_LEFT)
+#define HM_BSPC LT(2, KC_BSPC)
+#define HM_RGHT RALT_T(KC_RIGHT)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSLS,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_EQL,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,
+       KC_EQL,    HM_A,    HM_S,    HM_D,    HM_F,    KC_G,                         KC_H,    HM_J,    HM_K,    HM_L, HM_SCLN, KC_QUOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-  KC_LSFT,LCTL_T(KC_Z),    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT,RCTL_T(KC_SLSH),KC_RSFT,
+      KC_LSFT,    HM_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, HM_SLSH, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                     LALT_T(KC_UP),  LT(2,KC_SPC),  LGUI_T(KC_DOWN),    RGUI_T(KC_LEFT),  LT(2,KC_BSPC),  RALT_T(KC_RGHT)
+                                            HM_UP,  HM_SPC, HM_DOWN,    HM_LEFT, HM_BSPC,  HM_RGHT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -44,17 +82,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
   KC_LSFT,LCTL_T(KC_Z),    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT,RCTL_T(KC_SLSH),KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                     LALT_T(KC_UP),  LT(2,KC_SPC),  LGUI_T(KC_DOWN),    RGUI_T(KC_LEFT),  LT(2,KC_BSPC),  RALT_T(KC_RGHT)
+                                            HM_UP,  HM_SPC, HM_DOWN,    HM_LEFT, HM_BSPC,  HM_RGHT
                                       //`--------------------------'  `--------------------------'
   ),
 
   [2] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_MINS, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                        RESET,    KC_7,    KC_8,    KC_9,   KC_NO, KC_PLUS,
+      KC_MINS, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                        RESET,    KC_7,    KC_8,    KC_9,   KC_NO,   DF(1),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_UNDS, KC_AMPR, KC_LPRN, KC_LBRC, KC_LCBR, KC_ASTR,                     SENDHASH,    KC_4,    KC_5,    KC_6,KC_TILDE,  KC_GRV,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT, KC_CIRC, KC_RPRN, KC_RBRC, KC_RCBR,   RESET,                         KC_0,    KC_1,    KC_2,    KC_3,   DF(1), KC_RSFT,
+      KC_LSFT, KC_CIRC, KC_RPRN, KC_RBRC, KC_RCBR,   RESET,                         KC_0,    KC_1,    KC_2,    KC_3,   KC_NO, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LALT,  KC_TAB, KC_LGUI,     KC_RGUI, KC_ENT, KC_RALT
                                       //`--------------------------'  `--------------------------'
@@ -149,11 +187,14 @@ void oled_task_user(void) {
         oled_render_logo();
     }
 }
+#endif // OLED_ENABLE
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  #ifdef OLED_ENABLE
   if (record->event.pressed) {
     set_keylog(keycode, record);
   }    
+  #endif // OLED_ENABLE
   switch (keycode) {
     case SENDHASH:
     if (record->event.pressed) {
@@ -163,4 +204,3 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
   return true;
 }
-#endif // OLED_ENABLE
