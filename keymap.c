@@ -30,11 +30,19 @@ enum custom_keycodes {
 #define HM_S LALT_T(KC_S)
 #define HM_D LCTL_T(KC_D)
 #define HM_F LSFT_T(KC_F)
+#define HM_AMPR LGUI_T(KC_AMPR)
+#define HM_LPRN LALT_T(KC_LPRN)
+#define HM_LBRC LCTL_T(KC_LBRC)
+#define HM_LCBR LSFT_T(KC_LCBR)
 // Right half
 #define HM_J RSFT_T(KC_J)
 #define HM_K RCTL_T(KC_K)
-#define HM_L LALT_T(KC_L)
+#define HM_L RALT_T(KC_L)
 #define HM_SCLN RGUI_T(KC_SCLN)
+#define HM_4 RGUI_T(KC_4)
+#define HM_5 RALT_T(KC_5)
+#define HM_6 RCTL_T(KC_6)
+#define HM_TILDE RSFT_T(KC_TILDE)
 
 // If you don't want home mods, uncomment these:
 // Left half
@@ -84,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       KC_MINS, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                        RESET,    KC_7,    KC_8,    KC_9,   KC_NO,   DF(1),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_UNDS, KC_AMPR, KC_LPRN, KC_LBRC, KC_LCBR, KC_ASTR,                     SENDHASH,    KC_4,    KC_5,    KC_6,KC_TILDE,  KC_GRV,
+      KC_UNDS, HM_AMPR, HM_LPRN, HM_LBRC, HM_LCBR, KC_ASTR,                     SENDHASH,    HM_4,    HM_5,    HM_6,HM_TILDE,  KC_GRV,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, KC_CIRC, KC_RPRN, KC_RBRC, KC_RCBR,   RESET,                         KC_0,    KC_1,    KC_2,    KC_3,   KC_NO, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
