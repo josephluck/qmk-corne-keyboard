@@ -6,9 +6,9 @@ This build has OLED support. It can be turned on or off in `rules.mk`
 
 ### Principles
 
--   QWERTY
+-   QWERTY/COLEMAK
 -   Two layers
--   Mod tap based on thumb keys
+-   Home row mods
 -   Arrow keys on thumbs
 
 ### Modifying the firmware

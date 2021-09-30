@@ -48,18 +48,12 @@ enum custom_keycodes {
 // #define HM_L LALT_T(KC_L)
 // #define HM_SCLN RGUI_T(KC_SCLN)
 
-// Ctrl keys are on the z and / keys
-#define HM_Z LCTL_T(KC_Z)
-#define HM_SLSH RCTL_T(KC_SLSH)
-
 // Left thumb cluster
-#define HM_UP LALT_T(KC_UP)
 #define HM_SPC LT(2, KC_SPC)
 #define HM_DOWN LGUI_T(KC_DOWN)
 // Right thumb cluster
 #define HM_LEFT RGUI_T(KC_LEFT)
 #define HM_BSPC LT(2, KC_BSPC)
-#define HM_RGHT RALT_T(KC_RIGHT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
@@ -68,9 +62,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_EQL,    HM_A,    HM_S,    HM_D,    HM_F,    KC_G,                         KC_H,    HM_J,    HM_K,    HM_L, HM_SCLN, KC_QUOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT,    HM_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, HM_SLSH, KC_RSFT,
+        KC_NO,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,   KC_NO,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                            HM_UP,  HM_SPC, HM_DOWN,    HM_LEFT, HM_BSPC,  HM_RGHT
+                                            KC_UP,  HM_SPC, HM_DOWN,    HM_LEFT, HM_BSPC,  KC_RGHT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -80,9 +74,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_EQL,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, KC_QUOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-  KC_LSFT,LCTL_T(KC_Z),    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT,RCTL_T(KC_SLSH),KC_RSFT,
+        KC_NO,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,   KC_NO,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                            HM_UP,  HM_SPC, HM_DOWN,    HM_LEFT, HM_BSPC,  HM_RGHT
+                                            KC_UP,  HM_SPC, HM_DOWN,    HM_LEFT, HM_BSPC,  KC_RGHT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -94,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, KC_CIRC, KC_RPRN, KC_RBRC, KC_RCBR,   RESET,                         KC_0,    KC_1,    KC_2,    KC_3,   KC_NO, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LALT,  KC_TAB, KC_LGUI,     KC_RGUI, KC_ENT, KC_RALT
+                                            KC_NO,  KC_TAB, KC_LGUI,     KC_RGUI, KC_ENT,   KC_NO
                                       //`--------------------------'  `--------------------------'
   ),
 };
